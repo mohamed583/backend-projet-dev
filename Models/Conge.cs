@@ -1,0 +1,19 @@
+﻿namespace projetERP.Models
+{
+    public class Conge
+    {
+        public int Id { get; set; }
+        public string EmployeId { get; set; }
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
+        public string Type { get; set; }
+        public StatusConge StatusInscription { get; set; }
+        public Employe Employe { get; set; }
+    }
+    public enum StatusConge
+    {
+        EnCours,
+        Approuve,
+        Rejete
+    }
+}
