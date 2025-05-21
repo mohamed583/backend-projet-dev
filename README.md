@@ -19,6 +19,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.0
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.0
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 8.0.7
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.5
 ```
 ### Configuration de la base de données
 Une fois les packages installés, appliquez les migrations pour créer la base de données en exécutant la commande suivante :
