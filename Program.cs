@@ -37,7 +37,15 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddTransient<AuthController>();
 
+// Configuration Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+// Activer Swagger en développement
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Initialisation des rôles sur démarrage
 async Task InitializeRoles(IServiceProvider serviceProvider)
