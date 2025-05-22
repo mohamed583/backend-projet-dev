@@ -20,6 +20,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 9.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.0
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 8.0.7
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 7.0.5
+dotnet add package Swashbuckle.AspNetCore
 ```
 ### Configuration de la base de données
 Une fois les packages installés, appliquez les migrations pour créer la base de données en exécutant la commande suivante :
@@ -32,3 +33,9 @@ ou bien à travers l'application SQL Server Management Studio et voila les donn�
 
 ![image](https://github.com/user-attachments/assets/281e5924-1a38-4504-9bd2-7f3f14f71b77)
 
+### Accès à la documentation Swagger
+Une fois le projet lancé, vous pouvez accéder à l'interface Swagger pour tester les endpoints de l'API via l’URL suivante :
+```bash
+http://localhost:xxxx/swagger
+```
+Remplace xxxx par le port utilisé par ton application (visible dans la console au démarrage ou dans launchSettings.json).
