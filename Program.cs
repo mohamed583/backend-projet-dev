@@ -16,12 +16,40 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Configuration d'Identity
-builder.Services.AddIdentity<Personne, IdentityRole>()
+builder.Services.AddIdentity<Personne, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false; // Set to true if you want email confirmation
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 8;
+    options.User.RequireUniqueEmail = true;
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-_@";
+})
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
+// Désactive les redirections vers les vues MVC en cas d'accès refusé
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        context.Response.ContentType = "application/json";
+        return context.Response.WriteAsync("{\"message\": \"Non authentifié.\"}");
+    };
+
+    options.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+        context.Response.ContentType = "application/json";
+        return context.Response.WriteAsync("{\"message\": \"Accès refusé.\"}");
+    };
+});
+
 // Configuration JWT
-builder.Services.AddAuthentication("Bearer")
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
@@ -33,17 +61,56 @@ builder.Services.AddAuthentication("Bearer")
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
         };
+        options.Events = new JwtBearerEvents
+        {
+            OnChallenge = context =>
+            {
+                context.HandleResponse(); // Empêche le comportement par défaut
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+                return context.Response.WriteAsync("{\"message\": \"Non authentifié\"}");
+            }
+        };
     });
 
+builder.Services.AddAuthorization();
 builder.Services.AddTransient<AuthController>();
 
 // Configuration Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "ERP API", Version = "v1" });
+
+    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Description = "Entrez 'Bearer' [espace] puis votre token JWT.\n\nExemple : \"Bearer eyJhbGci...\""
+    });
+
+    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    {
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            {
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                {
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 var app = builder.Build();
-// Activer Swagger en développement
 
+// Activer Swagger en développement
 app.UseSwagger();
 app.UseSwaggerUI();
 
@@ -64,8 +131,7 @@ async Task InitializeRoles(IServiceProvider serviceProvider)
 
 // Configuration de la pipeline HTTP
 app.UseHttpsRedirection();
-
-app.UseAuthentication();  // Utilisation de l'authentification par JWT
+app.UseAuthentication();
 app.UseAuthorization();
 
 using (var scope = app.Services.CreateScope())

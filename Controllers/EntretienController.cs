@@ -10,10 +10,10 @@ namespace projetERP.Controllers
     [ApiController]
     [Route("entretien")]
     [Authorize]
-    public class EntretienApiController : ControllerBase
+    public class EntretienController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EntretienApiController(ApplicationDbContext context)
+        public EntretienController(ApplicationDbContext context)
         {
             _context = context;
         }

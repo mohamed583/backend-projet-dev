@@ -23,7 +23,6 @@ namespace projetERP.Controllers
             _dbContext = dbContext;
             _userManager = userManager;
         }
-
         // Afficher les candidatures associées à un poste (Admin uniquement)
         [Authorize(Roles = "Admin")]
         [HttpGet("candidatures/{id}")]
@@ -46,6 +45,7 @@ namespace projetERP.Controllers
         [HttpGet("mes-candidatures")]
         public async Task<ActionResult> GetMesCandidatures()
         {
+
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { message = "Utilisateur non authentifié." });

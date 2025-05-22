@@ -11,10 +11,10 @@ namespace projetERP.Controllers
     [ApiController]
     [Route("equipe")]
     [Authorize(Roles = "Admin")]
-    public class EquipeApiController : ControllerBase
+    public class EquipeController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EquipeApiController(ApplicationDbContext context)
+        public EquipeController(ApplicationDbContext context)
         {
             _context = context;
         }
