@@ -42,9 +42,15 @@ Remplace xxxx par le port utilisé par ton application (visible dans la console 
 
 ###Exécuter des requêtes API localement sans Swagger ni Postman
 Si vous souhaitez tester vos API localement sans passer par Swagger ni utiliser un outil externe comme Postman, vous pouvez utiliser le fichier backend-projetdev.http fourni dans le projet.
+
 Ce fichier peut être ouvert avec Visual Studio Code (avec l'extension REST Client installée).
+
 Pour envoyer une requête :
+
 Ouvrez backend-projetdev.http
+
 Localisez l'API que vous souhaitez tester
+
 Cliquez sur le bouton "Send Request" qui apparaît au-dessus de la méthode (ou utilisez Ctrl+Alt+R)
+
 Cela vous permet d'interagir directement avec vos endpoints dans un environnement simple et rapide.
