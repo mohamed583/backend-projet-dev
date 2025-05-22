@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
+using backend_projetdev.Models;
 using System.Linq;
 using System.Threading.Tasks;
-
+namespace backend_projetdev.Controllers;
 [Route("department")]
 [ApiController]
 [Authorize(Roles = "Admin")]

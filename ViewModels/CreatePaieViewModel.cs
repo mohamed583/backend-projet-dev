@@ -1,6 +1,6 @@
-﻿using projetERP.Models;
+﻿using backend_projetdev.Models;
 
-namespace projetERP.ViewModels
+namespace backend_projetdev.ViewModels
 {
     public class CreatePaieViewModel
     {

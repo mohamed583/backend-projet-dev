@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
-using projetERP.ViewModels;
+using backend_projetdev.Models;
+using backend_projetdev.ViewModels;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-
+namespace backend_projetdev.Controllers;
 [Route("employe")]
 [ApiController]
 public class EmployeController : ControllerBase

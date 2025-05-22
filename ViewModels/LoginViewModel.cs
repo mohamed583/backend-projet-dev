@@ -1,4 +1,4 @@
-﻿namespace projetERP.ViewModels
+﻿namespace backend_projetdev.ViewModels
 {
     public class LoginViewModel
     {

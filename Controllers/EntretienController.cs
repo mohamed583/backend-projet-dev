@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
-using projetERP.ViewModels;
+using backend_projetdev.Models;
+using backend_projetdev.ViewModels;
 using System.Security.Claims;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [ApiController]
     [Route("entretien")]

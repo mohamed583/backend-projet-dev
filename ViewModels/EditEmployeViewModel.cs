@@ -1,5 +1,6 @@
-﻿namespace projetERP.ViewModels;
-using projetERP.Models;
+﻿using backend_projetdev.Models;
+namespace backend_projetdev.ViewModels;
+
 public class EditEmployeViewModel
 {
     public string Id { get; set; }

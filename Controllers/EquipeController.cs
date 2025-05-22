@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
+using backend_projetdev.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [ApiController]
     [Route("equipe")]

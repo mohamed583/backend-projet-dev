@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace projetERP.Models
+namespace backend_projetdev.Models
 {
     public class ApplicationDbContext : IdentityDbContext<Personne>
     {

@@ -1,8 +1,8 @@
-﻿namespace projetERP.ViewModels;
-using projetERP.Models;
+﻿using backend_projetdev.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
+namespace backend_projetdev.ViewModels;
 public class TransformationEmployeViewModel
 {
     public string CandidatId { get; set; }

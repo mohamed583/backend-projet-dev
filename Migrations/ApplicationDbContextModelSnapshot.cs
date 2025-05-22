@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using projetERP.Models;
+using backend_projetdev.Models;
 
 #nullable disable
 
-namespace projetERP.Migrations
+namespace backend_projetdev.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -155,7 +155,7 @@ namespace projetERP.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("projetERP.Models.Candidature", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Candidature", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -183,7 +183,7 @@ namespace projetERP.Migrations
                     b.ToTable("Candidatures");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Conge", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Conge", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -215,7 +215,7 @@ namespace projetERP.Migrations
                     b.ToTable("Conges");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Departement", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Departement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -232,7 +232,7 @@ namespace projetERP.Migrations
                     b.ToTable("Departements");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Entretien", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Entretien", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -264,7 +264,7 @@ namespace projetERP.Migrations
                     b.ToTable("Entretiens");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Equipe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Equipe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -286,7 +286,7 @@ namespace projetERP.Migrations
                     b.ToTable("Equipes");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Evaluation", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Evaluation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -342,7 +342,7 @@ namespace projetERP.Migrations
                     b.ToTable("Evaluations");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Formation", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Formation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -379,7 +379,7 @@ namespace projetERP.Migrations
                     b.ToTable("Formations");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Inscription", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Inscription", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -409,7 +409,7 @@ namespace projetERP.Migrations
                     b.ToTable("Inscriptions");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Paie", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Paie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -446,7 +446,7 @@ namespace projetERP.Migrations
                     b.ToTable("Paies");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Personne", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Personne", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -528,7 +528,7 @@ namespace projetERP.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("projetERP.Models.Poste", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Poste", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -552,9 +552,9 @@ namespace projetERP.Migrations
                     b.ToTable("Postes");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Candidat", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Candidat", b =>
                 {
-                    b.HasBaseType("projetERP.Models.Personne");
+                    b.HasBaseType("backend_projetdev.Models.Personne");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -569,9 +569,9 @@ namespace projetERP.Migrations
                     b.HasDiscriminator().HasValue("Candidat");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Employe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Employe", b =>
                 {
-                    b.HasBaseType("projetERP.Models.Personne");
+                    b.HasBaseType("backend_projetdev.Models.Personne");
 
                     b.Property<int>("Contrat")
                         .HasColumnType("int");
@@ -603,9 +603,9 @@ namespace projetERP.Migrations
                     b.HasDiscriminator().HasValue("Employe");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Formateur", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Formateur", b =>
                 {
-                    b.HasBaseType("projetERP.Models.Personne");
+                    b.HasBaseType("backend_projetdev.Models.Personne");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -632,7 +632,7 @@ namespace projetERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("projetERP.Models.Personne", null)
+                    b.HasOne("backend_projetdev.Models.Personne", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -641,7 +641,7 @@ namespace projetERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("projetERP.Models.Personne", null)
+                    b.HasOne("backend_projetdev.Models.Personne", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -656,7 +656,7 @@ namespace projetERP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("projetERP.Models.Personne", null)
+                    b.HasOne("backend_projetdev.Models.Personne", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -665,22 +665,22 @@ namespace projetERP.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("projetERP.Models.Personne", null)
+                    b.HasOne("backend_projetdev.Models.Personne", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("projetERP.Models.Candidature", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Candidature", b =>
                 {
-                    b.HasOne("projetERP.Models.Candidat", "Candidat")
+                    b.HasOne("backend_projetdev.Models.Candidat", "Candidat")
                         .WithMany("Candidatures")
                         .HasForeignKey("CandidatId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("projetERP.Models.Poste", "Poste")
+                    b.HasOne("backend_projetdev.Models.Poste", "Poste")
                         .WithMany("Candidatures")
                         .HasForeignKey("PosteId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -691,9 +691,9 @@ namespace projetERP.Migrations
                     b.Navigation("Poste");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Conge", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Conge", b =>
                 {
-                    b.HasOne("projetERP.Models.Employe", "Employe")
+                    b.HasOne("backend_projetdev.Models.Employe", "Employe")
                         .WithMany("Conges")
                         .HasForeignKey("EmployeId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -702,15 +702,15 @@ namespace projetERP.Migrations
                     b.Navigation("Employe");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Entretien", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Entretien", b =>
                 {
-                    b.HasOne("projetERP.Models.Candidature", "Candidature")
+                    b.HasOne("backend_projetdev.Models.Candidature", "Candidature")
                         .WithMany("Entretiens")
                         .HasForeignKey("CandidatureId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("projetERP.Models.Employe", "Employe")
+                    b.HasOne("backend_projetdev.Models.Employe", "Employe")
                         .WithMany()
                         .HasForeignKey("EmployeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -721,9 +721,9 @@ namespace projetERP.Migrations
                     b.Navigation("Employe");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Equipe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Equipe", b =>
                 {
-                    b.HasOne("projetERP.Models.Departement", "Departement")
+                    b.HasOne("backend_projetdev.Models.Departement", "Departement")
                         .WithMany("Equipes")
                         .HasForeignKey("DepartementId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -732,15 +732,15 @@ namespace projetERP.Migrations
                     b.Navigation("Departement");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Evaluation", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Evaluation", b =>
                 {
-                    b.HasOne("projetERP.Models.Employe", "Employe")
+                    b.HasOne("backend_projetdev.Models.Employe", "Employe")
                         .WithMany("Evaluations")
                         .HasForeignKey("EmployeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("projetERP.Models.Employe", "Responsable")
+                    b.HasOne("backend_projetdev.Models.Employe", "Responsable")
                         .WithMany()
                         .HasForeignKey("ResponsableId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -751,9 +751,9 @@ namespace projetERP.Migrations
                     b.Navigation("Responsable");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Formation", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Formation", b =>
                 {
-                    b.HasOne("projetERP.Models.Formateur", "Formateur")
+                    b.HasOne("backend_projetdev.Models.Formateur", "Formateur")
                         .WithMany("Formations")
                         .HasForeignKey("FormateurId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -762,15 +762,15 @@ namespace projetERP.Migrations
                     b.Navigation("Formateur");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Inscription", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Inscription", b =>
                 {
-                    b.HasOne("projetERP.Models.Employe", "Employe")
+                    b.HasOne("backend_projetdev.Models.Employe", "Employe")
                         .WithMany("Inscriptions")
                         .HasForeignKey("EmployeId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("projetERP.Models.Formation", "Formation")
+                    b.HasOne("backend_projetdev.Models.Formation", "Formation")
                         .WithMany("Inscriptions")
                         .HasForeignKey("FormationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -781,9 +781,9 @@ namespace projetERP.Migrations
                     b.Navigation("Formation");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Paie", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Paie", b =>
                 {
-                    b.HasOne("projetERP.Models.Personne", "Personne")
+                    b.HasOne("backend_projetdev.Models.Personne", "Personne")
                         .WithMany("Paies")
                         .HasForeignKey("PersonneId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -792,9 +792,9 @@ namespace projetERP.Migrations
                     b.Navigation("Personne");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Employe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Employe", b =>
                 {
-                    b.HasOne("projetERP.Models.Equipe", "Equipe")
+                    b.HasOne("backend_projetdev.Models.Equipe", "Equipe")
                         .WithMany("Employes")
                         .HasForeignKey("EquipeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -803,42 +803,42 @@ namespace projetERP.Migrations
                     b.Navigation("Equipe");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Candidature", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Candidature", b =>
                 {
                     b.Navigation("Entretiens");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Departement", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Departement", b =>
                 {
                     b.Navigation("Equipes");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Equipe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Equipe", b =>
                 {
                     b.Navigation("Employes");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Formation", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Formation", b =>
                 {
                     b.Navigation("Inscriptions");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Personne", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Personne", b =>
                 {
                     b.Navigation("Paies");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Poste", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Poste", b =>
                 {
                     b.Navigation("Candidatures");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Candidat", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Candidat", b =>
                 {
                     b.Navigation("Candidatures");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Employe", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Employe", b =>
                 {
                     b.Navigation("Conges");
 
@@ -847,7 +847,7 @@ namespace projetERP.Migrations
                     b.Navigation("Inscriptions");
                 });
 
-            modelBuilder.Entity("projetERP.Models.Formateur", b =>
+            modelBuilder.Entity("backend_projetdev.Models.Formateur", b =>
                 {
                     b.Navigation("Formations");
                 });

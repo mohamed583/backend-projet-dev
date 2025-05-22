@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using projetERP.Models;
-using projetERP.ViewModels;
+using backend_projetdev.Models;
+using backend_projetdev.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using System;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [ApiController]
     [Route("formateur")]

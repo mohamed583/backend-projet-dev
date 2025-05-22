@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
+using backend_projetdev.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [ApiController]
     [Route("formation")]

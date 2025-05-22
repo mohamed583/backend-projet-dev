@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using projetERP.Models;
-using projetERP.ViewModels;
+using backend_projetdev.Models;
+using backend_projetdev.ViewModels;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [Authorize]
     [Route("candidature")]
@@ -23,6 +23,7 @@ namespace projetERP.Controllers
             _dbContext = dbContext;
             _userManager = userManager;
         }
+
         // Afficher les candidatures associées à un poste (Admin uniquement)
         [Authorize(Roles = "Admin")]
         [HttpGet("candidatures/{id}")]

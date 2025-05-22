@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.Contracts;
 
-namespace projetERP.Models
+namespace backend_projetdev.Models
 {
     public class Employe: Personne
     {

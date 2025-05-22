@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace projetERP.ViewModels
+namespace backend_projetdev.ViewModels
 {
     public class RegisterFormateurViewModel
     {

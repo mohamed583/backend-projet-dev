@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using projetERP.Models;
-using projetERP.ViewModels;
+using backend_projetdev.Models;
+using backend_projetdev.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace projetERP.Controllers
+namespace backend_projetdev.Controllers
 {
     [ApiController]
     [Route("paie")]

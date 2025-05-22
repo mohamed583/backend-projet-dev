@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Text.Json.Serialization;
 
 
-namespace projetERP.Models
+namespace backend_projetdev.Models
 {
     public class Personne : IdentityUser
     {
