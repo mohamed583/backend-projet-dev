@@ -1,6 +1,6 @@
-﻿namespace backend_projetdev.ViewModels
+﻿namespace backend_projetdev.DTOs
 {
-    public class LoginViewModel
+    public class LoginDTO
     {
         public string Email { get; set; }
         public string Password { get; set; }

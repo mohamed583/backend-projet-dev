@@ -1,8 +1,8 @@
 ﻿using backend_projetdev.Models;
 
-namespace backend_projetdev.ViewModels
+namespace backend_projetdev.DTOs
 {
-    public class CreatePaieViewModel
+    public class CreatePaieDTO
     {
         public string PersonneId { get; set; } // L'ID de la personne (employé ou formateur)
         public List<Employe> Employes { get; set; } // Liste des employés pour afficher dans le select

@@ -1,8 +1,8 @@
 ﻿using backend_projetdev.Models;
 
-namespace backend_projetdev.ViewModels
+namespace backend_projetdev.DTOs
 {
-    public class EntretienCreateViewModel
+    public class EntretienCreateDTO
     {
         public string CandidatureId { get; set; }
         public string EmployeId { get; set; }

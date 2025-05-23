@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_projetdev.Models;
+using backend_projetdev.DTOs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -48,21 +49,23 @@ namespace backend_projetdev.Controllers
             return Ok(equipe);
         }
 
-     
+
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Equipe model)
+        public async Task<IActionResult> Create([FromBody] ManageEquipeDTO dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var departement = await _context.Departements.FindAsync(model.DepartementId);
+            // Chercher le département associé
+            var departement = await _context.Departements.FindAsync(dto.DepartementId);
             if (departement == null)
                 return NotFound(new { message = "Département associé introuvable." });
 
+            // Créer l'entité Equipe à partir du DTO
             var equipe = new Equipe
             {
-                Nom = model.Nom,
-                DepartementId = model.DepartementId
+                Nom = dto.Nom,
+                DepartementId = dto.DepartementId
             };
 
             _context.Equipes.Add(equipe);
@@ -71,19 +74,20 @@ namespace backend_projetdev.Controllers
             return CreatedAtAction(nameof(GetEquipe), new { id = equipe.Id }, equipe);
         }
 
-       
+
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Equipe model)
+        public async Task<IActionResult> Update(int id, [FromBody] ManageEquipeDTO dto)
         {
-            if (id != model.Id)
-                return BadRequest(new { message = "L'identifiant ne correspond pas." });
+            if (id <= 0) return BadRequest(new { message = "ID de l'équipe incorrect." });
 
             var equipe = await _context.Equipes.FindAsync(id);
             if (equipe == null)
                 return NotFound(new { message = "Équipe introuvable." });
 
-            equipe.Nom = model.Nom;
-            equipe.DepartementId = model.DepartementId;
+            // Met à jour uniquement le Nom et le DepartementId
+            equipe.Nom = dto.Nom;
+            equipe.DepartementId = dto.DepartementId;
 
             _context.Equipes.Update(equipe);
             await _context.SaveChangesAsync();
@@ -91,7 +95,8 @@ namespace backend_projetdev.Controllers
             return Ok(new { message = "Équipe mise à jour avec succès." });
         }
 
-       
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

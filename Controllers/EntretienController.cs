@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using System.Security.Claims;
 
 namespace backend_projetdev.Controllers
@@ -21,7 +21,7 @@ namespace backend_projetdev.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([FromBody] EntretienCreateViewModel model)
+        public async Task<IActionResult> Create([FromBody] EntretienCreateDTO model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -114,7 +114,7 @@ namespace backend_projetdev.Controllers
 
         [HttpPut("Complete/{id}")]
         [Authorize(Roles = "Employe")]
-        public async Task<IActionResult> Complete(string id, [FromBody] EntretienCompleteViewModel model)
+        public async Task<IActionResult> Complete(string id, [FromBody] EntretienCompleteDTO model)
         {
             var employeId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(employeId))

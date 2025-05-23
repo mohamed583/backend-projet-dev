@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using System;
@@ -64,7 +64,7 @@ namespace backend_projetdev.Controllers
         // 4. Créer une paie (Admin uniquement)
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CreatePaie([FromBody] CreatePaieViewModel viewModel)
+        public async Task<IActionResult> CreatePaie([FromBody] CreatePaieDTO viewModel)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState); // 400

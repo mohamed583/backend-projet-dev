@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_projetdev.Models;
+using backend_projetdev.DTOs;
 
 namespace backend_projetdev.Controllers
 {
@@ -34,40 +35,63 @@ namespace backend_projetdev.Controllers
             return Ok(poste); // 200
         }
 
-        
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([FromBody] Poste poste)
+        public async Task<IActionResult> Create([FromBody] ManagePosteDTO dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState); // 400
+
+            // Créer l'entité Poste à partir du DTO
+            var poste = new Poste
+            {
+                Nom = dto.Nom,
+                Description = dto.Description,
+                StatutPoste = dto.StatutPoste
+            };
 
             _dbContext.Postes.Add(poste);
             await _dbContext.SaveChangesAsync();
+
             return CreatedAtAction(nameof(Get), new { id = poste.Id }, poste); // 201
         }
 
-        
+
+
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Update(int id, [FromBody] Poste poste)
+        public async Task<IActionResult> Update(int id, [FromBody] ManagePosteDTO dto)
         {
-            if (id != poste.Id) return BadRequest("ID mismatch"); // 400
-            if (!ModelState.IsValid) return BadRequest(ModelState); // 400
+            // Vérifier si l'ID passé dans l'URL correspond à celui du modèle
+            if (id <= 0) return BadRequest(new { message = "ID du poste incorrect." });
 
+            var poste = await _dbContext.Postes.FindAsync(id);
+            if (poste == null)
+                return NotFound(new { message = "Poste introuvable." });
+
+            // Mettre à jour uniquement les propriétés Nom, Description, et StatutPoste
+            poste.Nom = dto.Nom;
+            poste.Description = dto.Description;
+            poste.StatutPoste = dto.StatutPoste;
+
+            // Marquer l'entité comme modifiée
             _dbContext.Entry(poste).State = EntityState.Modified;
+
             try
             {
                 await _dbContext.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_dbContext.Postes.Any(p => p.Id == id)) return NotFound(); // 404
+                if (!_dbContext.Postes.Any(p => p.Id == id)) return NotFound(new { message = "Poste introuvable." });
                 throw;
             }
-            return NoContent(); // 204
+
+            return NoContent(); // Code 204
         }
 
-        
+
+
         [HttpPatch("statut/{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ModifierStatut(int id, [FromQuery] StatutPoste status)

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -26,7 +26,7 @@ namespace backend_projetdev.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
+        public async Task<IActionResult> Login([FromBody] LoginDTO model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid model" });
@@ -68,12 +68,12 @@ namespace backend_projetdev.Controllers
 
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterViewModel model)
+        public async Task<IActionResult> Register([FromBody] RegisterDTO model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid model" });
 
-            var user = new Personne
+            var user = new Candidat
             {
                 Id = Guid.NewGuid().ToString(),
                 Nom = model.Nom,

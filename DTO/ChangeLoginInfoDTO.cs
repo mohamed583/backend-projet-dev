@@ -1,6 +1,6 @@
-﻿namespace backend_projetdev.ViewModels
+﻿namespace backend_projetdev.DTOs
 {
-    public class ChangeLoginInfoViewModel
+    public class ChangeLoginInfoDTO
     {
         public string UserId { get; set; }
         public string NewEmail { get; set; }

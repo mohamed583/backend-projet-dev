@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace backend_projetdev.ViewModels
+namespace backend_projetdev.DTOs
 {
-    public class EditFormateurViewModel
+    public class EditFormateurDTO
     {
         public string Id { get; set; }
 

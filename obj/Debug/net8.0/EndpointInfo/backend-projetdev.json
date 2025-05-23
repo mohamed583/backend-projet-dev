@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginViewModel"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginViewModel"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginViewModel"
+                "$ref": "#/components/schemas/LoginDTO"
               }
             }
           }
@@ -45,17 +45,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterViewModel"
+                "$ref": "#/components/schemas/RegisterDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterViewModel"
+                "$ref": "#/components/schemas/RegisterDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterViewModel"
+                "$ref": "#/components/schemas/RegisterDTO"
               }
             }
           }
@@ -218,17 +218,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TransformationEmployeViewModel"
+                "$ref": "#/components/schemas/TransformationEmployeDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TransformationEmployeViewModel"
+                "$ref": "#/components/schemas/TransformationEmployeDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TransformationEmployeViewModel"
+                "$ref": "#/components/schemas/TransformationEmployeDTO"
               }
             }
           }
@@ -377,17 +377,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             }
           }
@@ -419,17 +419,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Departement"
+                "$ref": "#/components/schemas/ManageDepartementDTO"
               }
             }
           }
@@ -525,17 +525,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditEmployeViewModel"
+                "$ref": "#/components/schemas/EditEmployeDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditEmployeViewModel"
+                "$ref": "#/components/schemas/EditEmployeDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EditEmployeViewModel"
+                "$ref": "#/components/schemas/EditEmployeDTO"
               }
             }
           }
@@ -610,17 +610,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             }
           }
@@ -684,17 +684,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCreateViewModel"
+                "$ref": "#/components/schemas/EntretienCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCreateViewModel"
+                "$ref": "#/components/schemas/EntretienCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCreateViewModel"
+                "$ref": "#/components/schemas/EntretienCreateDTO"
               }
             }
           }
@@ -793,17 +793,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCompleteViewModel"
+                "$ref": "#/components/schemas/EntretienCompleteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCompleteViewModel"
+                "$ref": "#/components/schemas/EntretienCompleteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EntretienCompleteViewModel"
+                "$ref": "#/components/schemas/EntretienCompleteDTO"
               }
             }
           }
@@ -879,17 +879,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             }
           }
@@ -931,17 +931,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Equipe"
+                "$ref": "#/components/schemas/ManageEquipeDTO"
               }
             }
           }
@@ -1185,17 +1185,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterFormateurViewModel"
+                "$ref": "#/components/schemas/RegisterFormateurDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterFormateurViewModel"
+                "$ref": "#/components/schemas/RegisterFormateurDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RegisterFormateurViewModel"
+                "$ref": "#/components/schemas/RegisterFormateurDTO"
               }
             }
           }
@@ -1256,17 +1256,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditFormateurViewModel"
+                "$ref": "#/components/schemas/EditFormateurDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EditFormateurViewModel"
+                "$ref": "#/components/schemas/EditFormateurDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EditFormateurViewModel"
+                "$ref": "#/components/schemas/EditFormateurDTO"
               }
             }
           }
@@ -1307,17 +1307,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ChangeLoginInfoViewModel"
+                "$ref": "#/components/schemas/ChangeLoginInfoDTO"
               }
             }
           }
@@ -1800,17 +1800,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePaieViewModel"
+                "$ref": "#/components/schemas/CreatePaieDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePaieViewModel"
+                "$ref": "#/components/schemas/CreatePaieDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePaieViewModel"
+                "$ref": "#/components/schemas/CreatePaieDTO"
               }
             }
           }
@@ -1888,17 +1888,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             }
           }
@@ -1951,17 +1951,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Poste"
+                "$ref": "#/components/schemas/ManagePosteDTO"
               }
             }
           }
@@ -2093,7 +2093,7 @@
   },
   "components": {
     "schemas": {
-      "ChangeLoginInfoViewModel": {
+      "ChangeLoginInfoDTO": {
         "type": "object",
         "properties": {
           "userId": {
@@ -2143,7 +2143,7 @@
         },
         "additionalProperties": false
       },
-      "CreatePaieViewModel": {
+      "CreatePaieDTO": {
         "type": "object",
         "properties": {
           "personneId": {
@@ -2187,28 +2187,7 @@
         },
         "additionalProperties": false
       },
-      "Departement": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nom": {
-            "type": "string",
-            "nullable": true
-          },
-          "equipes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Equipe"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "EditEmployeViewModel": {
+      "EditEmployeDTO": {
         "type": "object",
         "properties": {
           "id": {
@@ -2270,7 +2249,7 @@
         },
         "additionalProperties": false
       },
-      "EditFormateurViewModel": {
+      "EditFormateurDTO": {
         "required": [
           "description",
           "domaine",
@@ -2424,7 +2403,7 @@
         },
         "additionalProperties": false
       },
-      "EntretienCompleteViewModel": {
+      "EntretienCompleteDTO": {
         "type": "object",
         "properties": {
           "id": {
@@ -2442,7 +2421,7 @@
         },
         "additionalProperties": false
       },
-      "EntretienCreateViewModel": {
+      "EntretienCreateDTO": {
         "type": "object",
         "properties": {
           "candidatureId": {
@@ -2477,9 +2456,6 @@
           "departementId": {
             "type": "integer",
             "format": "int32"
-          },
-          "departement": {
-            "$ref": "#/components/schemas/Departement"
           },
           "nom": {
             "type": "string",
@@ -2726,7 +2702,7 @@
         },
         "additionalProperties": false
       },
-      "LoginViewModel": {
+      "LoginDTO": {
         "type": "object",
         "properties": {
           "email": {
@@ -2743,20 +2719,52 @@
         },
         "additionalProperties": false
       },
-      "Poste": {
+      "ManageDepartementDTO": {
+        "required": [
+          "nom"
+        ],
         "type": "object",
         "properties": {
-          "id": {
+          "nom": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ManageEquipeDTO": {
+        "required": [
+          "departementId",
+          "nom"
+        ],
+        "type": "object",
+        "properties": {
+          "nom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "departementId": {
             "type": "integer",
             "format": "int32"
-          },
+          }
+        },
+        "additionalProperties": false
+      },
+      "ManagePosteDTO": {
+        "required": [
+          "description",
+          "nom",
+          "statutPoste"
+        ],
+        "type": "object",
+        "properties": {
           "nom": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "statutPoste": {
             "$ref": "#/components/schemas/StatutPoste"
@@ -2764,7 +2772,37 @@
         },
         "additionalProperties": false
       },
-      "RegisterFormateurViewModel": {
+      "RegisterDTO": {
+        "required": [
+          "email",
+          "nom",
+          "password",
+          "prenom"
+        ],
+        "type": "object",
+        "properties": {
+          "nom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "prenom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "format": "password"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterFormateurDTO": {
         "required": [
           "description",
           "domaine",
@@ -2808,72 +2846,6 @@
           "confirmPassword": {
             "type": "string",
             "format": "password",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RegisterViewModel": {
-        "required": [
-          "email",
-          "nom",
-          "password",
-          "prenom"
-        ],
-        "type": "object",
-        "properties": {
-          "nom": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "prenom": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
-          },
-          "password": {
-            "minLength": 1,
-            "type": "string",
-            "format": "password"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SelectListGroup": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "SelectListItem": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean"
-          },
-          "group": {
-            "$ref": "#/components/schemas/SelectListGroup"
-          },
-          "selected": {
-            "type": "boolean"
-          },
-          "text": {
-            "type": "string",
-            "nullable": true
-          },
-          "value": {
-            "type": "string",
             "nullable": true
           }
         },
@@ -2934,7 +2906,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "TransformationEmployeViewModel": {
+      "TransformationEmployeDTO": {
         "required": [
           "confirmPassword",
           "password"
@@ -2946,14 +2918,6 @@
             "nullable": true
           },
           "candidatureId": {
-            "type": "string",
-            "nullable": true
-          },
-          "nom": {
-            "type": "string",
-            "nullable": true
-          },
-          "prenom": {
             "type": "string",
             "nullable": true
           },
@@ -2987,13 +2951,6 @@
           "confirmPassword": {
             "minLength": 1,
             "type": "string"
-          },
-          "equipes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SelectListItem"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

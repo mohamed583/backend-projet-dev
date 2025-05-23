@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -144,7 +144,7 @@ namespace backend_projetdev.Controllers
         // Transformer une candidature en employé (uniquement pour l'admin)
         [Authorize(Roles = "Admin")]
         [HttpPost("transformation-employe")]
-        public async Task<ActionResult> TransformationEmploye(TransformationEmployeViewModel model)
+        public async Task<ActionResult> TransformationEmploye(TransformationEmployeDTO model)
         {
             var candidature = await _dbContext.Candidatures
                 .FirstOrDefaultAsync(c => c.Id == model.CandidatureId);
@@ -171,9 +171,14 @@ namespace backend_projetdev.Controllers
             try
             {
                 var result = await _userManager.CreateAsync(employe, model.Password);
-                if (!result.Succeeded)
-                    return BadRequest(new { message = "Erreur lors de la création de l'employé." });
-
+                if (!result.Succeeded) { 
+                    Console.WriteLine("Erreur lors de la création de l'employé :");
+                foreach (var error in result.Errors)
+                {
+                    Console.WriteLine($"- {error.Description}");
+                }
+                return BadRequest(new { message = "Erreur lors de la création de l'employé." });
+            }
                 await _userManager.AddToRoleAsync(employe, "Employe");
 
                 if (model.EstManager)

@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.LoginViewModel",
+        "Type": "backend_projetdev.DTOs.LoginDTO",
         "IsRequired": true
       }
     ],
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.RegisterViewModel",
+        "Type": "backend_projetdev.DTOs.RegisterDTO",
         "IsRequired": true
       }
     ],
@@ -146,7 +146,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.TransformationEmployeViewModel",
+        "Type": "backend_projetdev.DTOs.TransformationEmployeDTO",
         "IsRequired": true
       }
     ],
@@ -244,8 +244,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "backend_projetdev.Models.Departement",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManageDepartementDTO",
         "IsRequired": true
       }
     ],
@@ -265,8 +265,8 @@
         "IsRequired": true
       },
       {
-        "Name": "model",
-        "Type": "backend_projetdev.Models.Departement",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManageDepartementDTO",
         "IsRequired": true
       }
     ],
@@ -335,7 +335,7 @@
       },
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.EditEmployeViewModel",
+        "Type": "backend_projetdev.DTOs.EditEmployeDTO",
         "IsRequired": true
       }
     ],
@@ -356,7 +356,7 @@
       },
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.ChangeLoginInfoViewModel",
+        "Type": "backend_projetdev.DTOs.ChangeLoginInfoDTO",
         "IsRequired": true
       }
     ],
@@ -430,7 +430,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.EntretienCreateViewModel",
+        "Type": "backend_projetdev.DTOs.EntretienCreateDTO",
         "IsRequired": true
       }
     ],
@@ -483,7 +483,7 @@
       },
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.EntretienCompleteViewModel",
+        "Type": "backend_projetdev.DTOs.EntretienCompleteDTO",
         "IsRequired": true
       }
     ],
@@ -518,8 +518,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "backend_projetdev.Models.Equipe",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManageEquipeDTO",
         "IsRequired": true
       }
     ],
@@ -555,8 +555,8 @@
         "IsRequired": true
       },
       {
-        "Name": "model",
-        "Type": "backend_projetdev.Models.Equipe",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManageEquipeDTO",
         "IsRequired": true
       }
     ],
@@ -745,7 +745,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.RegisterFormateurViewModel",
+        "Type": "backend_projetdev.DTOs.RegisterFormateurDTO",
         "IsRequired": true
       }
     ],
@@ -792,7 +792,7 @@
       },
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.EditFormateurViewModel",
+        "Type": "backend_projetdev.DTOs.EditFormateurDTO",
         "IsRequired": true
       }
     ],
@@ -824,7 +824,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "backend_projetdev.ViewModels.ChangeLoginInfoViewModel",
+        "Type": "backend_projetdev.DTOs.ChangeLoginInfoDTO",
         "IsRequired": true
       }
     ],
@@ -1115,7 +1115,7 @@
     "Parameters": [
       {
         "Name": "viewModel",
-        "Type": "backend_projetdev.ViewModels.CreatePaieViewModel",
+        "Type": "backend_projetdev.DTOs.CreatePaieDTO",
         "IsRequired": true
       }
     ],
@@ -1176,8 +1176,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "poste",
-        "Type": "backend_projetdev.Models.Poste",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManagePosteDTO",
         "IsRequired": true
       }
     ],
@@ -1213,8 +1213,8 @@
         "IsRequired": true
       },
       {
-        "Name": "poste",
-        "Type": "backend_projetdev.Models.Poste",
+        "Name": "dto",
+        "Type": "backend_projetdev.DTOs.ManagePosteDTO",
         "IsRequired": true
       }
     ],

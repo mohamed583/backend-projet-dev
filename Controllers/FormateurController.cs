@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
@@ -28,7 +28,7 @@ namespace backend_projetdev.Controllers
 
         // 1. Créer un formateur
         [HttpPost]
-        public async Task<IActionResult> CreateFormateur([FromBody] RegisterFormateurViewModel model)
+        public async Task<IActionResult> CreateFormateur([FromBody] RegisterFormateurDTO model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -78,7 +78,7 @@ namespace backend_projetdev.Controllers
 
         // 4. Modifier un formateur
         [HttpPut("{id}")]
-        public async Task<IActionResult> EditFormateur(string id, [FromBody] EditFormateurViewModel model)
+        public async Task<IActionResult> EditFormateur(string id, [FromBody] EditFormateurDTO model)
         {
             if (string.IsNullOrEmpty(id) || id != model.Id)
                 return BadRequest("Id invalide");
@@ -121,7 +121,7 @@ namespace backend_projetdev.Controllers
 
         // 6. Changer les infos de login (email et mot de passe)
         [HttpPut("ChangeLoginInfo")]
-        public async Task<IActionResult> ChangeLoginInfo([FromBody] ChangeLoginInfoViewModel model)
+        public async Task<IActionResult> ChangeLoginInfo([FromBody] ChangeLoginInfoDTO model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

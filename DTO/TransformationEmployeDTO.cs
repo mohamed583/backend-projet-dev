@@ -2,13 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
-namespace backend_projetdev.ViewModels;
-public class TransformationEmployeViewModel
+namespace backend_projetdev.DTOs;
+public class TransformationEmployeDTO
 {
     public string CandidatId { get; set; }
     public string CandidatureId { get; set; }
-    public string Nom { get; set; }
-    public string Prenom { get; set; }
     public string Email { get; set; }
     public string Metier { get; set; }
     public decimal Salaire { get; set; }
@@ -20,5 +18,4 @@ public class TransformationEmployeViewModel
     public string Password { get; set; }
     [Required]
     public string ConfirmPassword { get; set; }
-    public IEnumerable<SelectListItem> Equipes { get; set; } // Liste des équipes
 }

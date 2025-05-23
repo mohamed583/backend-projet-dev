@@ -1,7 +1,7 @@
 ﻿using backend_projetdev.Models;
-namespace backend_projetdev.ViewModels;
+namespace backend_projetdev.DTOs;
 
-public class EditEmployeViewModel
+public class EditEmployeDTO
 {
     public string Id { get; set; }
     public string Nom { get; set; }

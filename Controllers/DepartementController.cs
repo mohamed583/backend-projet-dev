@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using backend_projetdev.DTOs;
+using backend_projetdev.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using backend_projetdev.Models;
 using System.Linq;
 using System.Threading.Tasks;
 namespace backend_projetdev.Controllers;
@@ -21,7 +22,9 @@ public class DepartementController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetDepartements()
     {
-        var departements = await _context.Departements.ToListAsync();
+        var departements = await _context.Departements
+                                   .Include(d => d.Equipes)  // Inclus les équipes associées
+                                   .ToListAsync();
         if (departements == null || !departements.Any())
         {
             return NotFound(new { message = "Aucun département trouvé." });
@@ -31,29 +34,37 @@ public class DepartementController : ControllerBase
 
     // Créer un département
     [HttpPost]
-    public async Task<IActionResult> CreateDepartement([FromBody] Departement model)
+    public async Task<IActionResult> CreateDepartement([FromBody] ManageDepartementDTO dto)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(new { message = "Données invalides.", errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)) });
         }
 
-        _context.Departements.Add(model);
+        var departement = new Departement
+        {
+            Nom = dto.Nom
+        };
+
+        _context.Departements.Add(departement);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetDepartements), new { id = model.Id }, model); // Code 201 Created
+        return CreatedAtAction(nameof(GetDepartements), new { id = departement.Id }, departement);
     }
+
 
     // Modifier un département
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateDepartement(int id, [FromBody] Departement model)
+    public async Task<IActionResult> UpdateDepartement(int id, [FromBody] ManageDepartementDTO dto)
     {
-        if (id != model.Id) return BadRequest(new { message = "ID du département incorrect." });
+        if (id <= 0) return BadRequest(new { message = "ID du département incorrect." });
 
         var departement = await _context.Departements.FindAsync(id);
         if (departement == null) return NotFound(new { message = "Département non trouvé." });
 
-        departement.Nom = model.Nom; // Mettre à jour les autres propriétés si nécessaire
+        // Met à jour uniquement le Nom
+        departement.Nom = dto.Nom;
+
         _context.Departements.Update(departement);
         await _context.SaveChangesAsync();
 

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace backend_projetdev.ViewModels
+namespace backend_projetdev.DTOs
 {
-    public class RegisterFormateurViewModel
+    public class RegisterFormateurDTO
     {
         [Required]
         public string Nom { get; set; }

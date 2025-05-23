@@ -9385,23 +9385,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\medta\\.nuget\\packages\\": {},
+    "C:\\Users\\saber\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\moi\\backend-projetdev\\backend-projetdev.csproj",
+      "projectUniqueName": "C:\\Users\\saber\\source\\repos\\mohamed583\\backend-projet-dev\\backend-projetdev.csproj",
       "projectName": "backend-projetdev",
-      "projectPath": "D:\\moi\\backend-projetdev\\backend-projetdev.csproj",
-      "packagesPath": "C:\\Users\\medta\\.nuget\\packages\\",
-      "outputPath": "D:\\moi\\backend-projetdev\\obj\\",
+      "projectPath": "C:\\Users\\saber\\source\\repos\\mohamed583\\backend-projet-dev\\backend-projetdev.csproj",
+      "packagesPath": "C:\\Users\\saber\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\saber\\source\\repos\\mohamed583\\backend-projet-dev\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\medta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\saber\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

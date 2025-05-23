@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend_projetdev.Models;
-using backend_projetdev.ViewModels;
+using backend_projetdev.DTOs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,7 +38,7 @@ public class EmployeController : ControllerBase
     // Modifier un employé (PUT)
     [HttpPut("{id}/edit")]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> EditEmploye(string id, [FromBody] EditEmployeViewModel model)
+    public async Task<IActionResult> EditEmploye(string id, [FromBody] EditEmployeDTO model)
     {
         if (id != model.Id) return BadRequest(new { message = "L'ID ne correspond pas." });
 
@@ -114,7 +114,7 @@ public class EmployeController : ControllerBase
     // Modifier les informations de connexion (email, mot de passe)
     [HttpPut("change-login-info/{id}")]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> ChangeLoginInfo(string id, [FromBody] ChangeLoginInfoViewModel model)
+    public async Task<IActionResult> ChangeLoginInfo(string id, [FromBody] ChangeLoginInfoDTO model)
     {
         if (string.IsNullOrEmpty(model.NewEmail) && string.IsNullOrEmpty(model.NewPassword))
         {

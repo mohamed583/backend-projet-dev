@@ -1,6 +1,6 @@
-﻿namespace backend_projetdev.ViewModels
+﻿namespace backend_projetdev.DTOs
 {
-    public class EntretienCompleteViewModel
+    public class EntretienCompleteDTO
     {
         public string Id { get; set; }
         public string CandidatureId { get; set; }
