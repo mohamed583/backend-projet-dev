@@ -48,7 +48,7 @@ Une fois les packages installés, appliquez les migrations pour créer la base d
 ```bash
 dotnet ef database update --project src/backend-projetdev.Infrastructure --startup-project src/backend-projetdev.API --context ApplicationDbContext
 ```
-Il n'est pas necessaire d'appliquer toujours les migrations même si il y'a des nouvelles car le projet migre automatiquements les migrations existantes lors du Build
+Il n’est pas nécessaire d’appliquer manuellement les migrations à chaque modification, car le projet les applique automatiquement lors du build.
 
 Si vous souhaitez créer une migration, utilisez la commande suivante (remplacez [migrationName] par le nom de votre migration) :
 ```bash
