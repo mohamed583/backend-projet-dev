@@ -32,7 +32,7 @@ app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ERP API V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "HR flow API V1");
     c.RoutePrefix = string.Empty; // Accès direct à la racine
 });
 

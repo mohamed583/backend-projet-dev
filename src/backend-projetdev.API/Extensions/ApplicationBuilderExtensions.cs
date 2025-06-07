@@ -12,7 +12,7 @@ namespace backend_projetdev.API.Extensions
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProjetDev API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HR flow API v1"));
             }
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
