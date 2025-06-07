@@ -32,6 +32,17 @@ dotnet add src/backend-projetdev.Infrastructure/backend-projetdev.Infrastructure
 dotnet add src/backend-projetdev.Infrastructure/backend-projetdev.Infrastructure.csproj package Microsoft.IdentityModel.Tokens --version 8.11.0
 dotnet add src/backend-projetdev.Infrastructure/backend-projetdev.Infrastructure.csproj package System.IdentityModel.Tokens.Jwt --version 8.11.0
 ```
+
+### 🗂️ Création des dossiers `wwwroot` et `cvs`
+
+1️⃣ **Clic droit** sur le projet `backend-projetdev.API`  
+➡️ **Ajouter** > **Nouveau dossier**  
+➡️ Nomme le dossier :  `wwwroot`
+
+2️⃣ **Clic droit** sur le dossier `wwwroot`  
+➡️ **Ajouter** > **Nouveau dossier**  
+➡️ Nomme le sous-dossier :  `cvs`
+
 ### Configuration de la base de données
 Une fois les packages installés, appliquez les migrations pour créer la base de données en exécutant la commande suivante :
 ```bash
