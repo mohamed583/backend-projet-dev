@@ -4,10 +4,8 @@ using backend_projetdev.Application.DTOs;
 using backend_projetdev.Application.Interfaces;
 using backend_projetdev.Application.UseCases.Auth.Queries;
 using MediatR;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace backend_projetdev.Application.UseCases.Auth.Handlers
@@ -46,26 +44,39 @@ namespace backend_projetdev.Application.UseCases.Auth.Handlers
 
             var roles = await _roleService.GetUserRolesAsync(userId);
 
+            PersonneDto dto;
+
             if (roles.Contains("Candidat"))
             {
                 var candidat = await _candidatRepository.GetByIdAsync(userId);
-                if (candidat == null) return Result<PersonneDto>.Failure("Candidat not found");
+                if (candidat == null)
+                    return Result<PersonneDto>.Failure("Candidat not found");
 
-                return Result<PersonneDto>.SuccessResult(_mapper.Map<PersonneDto>(candidat));
+                dto = _mapper.Map<PersonneDto>(candidat);
+                dto.Discriminator = "Candidat";
             }
-
-            if (roles.Contains("Formateur"))
+            else if (roles.Contains("Formateur"))
             {
                 var formateur = await _formateurRepository.GetByIdAsync(userId);
-                if (formateur == null) return Result<PersonneDto>.Failure("Formateur not found");
+                if (formateur == null)
+                    return Result<PersonneDto>.Failure("Formateur not found");
 
-                return Result<PersonneDto>.SuccessResult(_mapper.Map<PersonneDto>(formateur));
+                dto = _mapper.Map<PersonneDto>(formateur);
+                dto.Discriminator = "Formateur";
+            }
+            else
+            {
+                var employe = await _employeService.GetByIdAsync(userId);
+                if (employe == null)
+                    return Result<PersonneDto>.Failure("Employé not found");
+
+                dto = _mapper.Map<PersonneDto>(employe);
+                dto.Discriminator = "Employe";
             }
 
-            var employe = await _employeService.GetByIdAsync(userId);
-            if (employe == null) return Result<PersonneDto>.Failure("Employé not found");
+            dto.Roles = roles;
 
-            return Result<PersonneDto>.SuccessResult(_mapper.Map<PersonneDto>(employe));
+            return Result<PersonneDto>.SuccessResult(dto);
         }
     }
 }
